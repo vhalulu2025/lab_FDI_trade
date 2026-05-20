@@ -9,7 +9,7 @@
 # clear environment
 rm(list = ls())
 
-
+ 
 # new packages we need for Census and BEA
 
 #install.packages("censusapi")
@@ -280,7 +280,7 @@ imports_naics<-getCensus(
   CTY_CODE="1220",
   CTY_CODE="2010"
 )
-
+ 
 
 #to really save time, we want the cumulative value, for the month of December
 #GEN_VAL_YR is cumulative imports for consumption by month
