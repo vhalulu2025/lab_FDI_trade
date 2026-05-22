@@ -301,17 +301,28 @@ imports_naics<-getCensus(
 ## We also want to get the country names because the numericacodes 
 # are not meaningful to non-specialists
 
-imports_cty_yr<-getCensus(
-  name = "timeseries/intltrade/imports/naics",
-  vars = c("GEN_VAL_YR","YEAR","CTY_CODE","CTY_NAME"),
-  time = "from 2000",
-  MONTH = "12",
+#imports_cty_yr<-getCensus(
+ # name = "timeseries/intltrade/imports/naics",
+  #vars = c("GEN_VAL_YR","YEAR","CTY_CODE","CTY_NAME"),
+ # time = "from 2000",
+ # MONTH = "12",
+ # show_call = TRUE
+#)
+
+
+#head(imports_cty_yr)
+
+
+# Get all export destinations by country and year
+exports_cty_yr <- getCensus(
+  name  = "timeseries/intltrade/exports/naics",
+  vars  = c("ALL_VAL_YR", "YEAR", "CTY_CODE", "CTY_NAME"),
+  time  = "from 2000",
+  MONTH = "12",  # December = full year cumulative total
   show_call = TRUE
 )
 
-
-head(imports_cty_yr)
-
+head(exports_cty_yr)
 
 #filter region and other aggregation codes#
 #takea  look at the data you can see why I do this#
